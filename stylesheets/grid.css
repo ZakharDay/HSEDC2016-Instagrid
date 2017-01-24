@@ -1,0 +1,29 @@
+body, html {
+  font-size: 0;
+}
+
+.rail {
+  display: flex;
+  white-space: nowrap;
+}
+
+.collection {
+}
+
+.collection div {
+  width: 50vh;
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  vertical-align: top;
+}
+
+.collection > div:first-child {
+  display: inline-block;
+  width: 100vh;
+  height: 100vh;
+}
+
+.collection section {
+  display: inline-block;
+}

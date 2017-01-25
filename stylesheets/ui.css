@@ -1,0 +1,44 @@
+header,
+footer {
+  display: flex;
+  height: 50px;
+  padding: 20px;
+  background-color: black;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  justify-content: center;
+  align-items: center;
+}
+
+header div,
+footer div {
+  width: 30px;
+  height: 10px;
+  background-color: white;
+}
+
+.prev,
+.next {
+  position: fixed;
+  top: calc(100vh - 50vh - 25px);
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev { left:  20px; }
+.next { right: 20px; }
+
+.disabled {
+  opacity: 0;
+  visibility: hidden;
+}

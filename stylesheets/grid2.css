@@ -1,5 +1,6 @@
 .gallery {
-  overflow: hidden;
+  width: 100vw;
+  overflow-y: scroll;
 }
 
 .rail {
@@ -11,8 +12,8 @@
 }
 
 .collection div {
-  width: 50vh;
-  height: 50vh;
+  width:  50vh;
+  height: calc(50vh - 50px);
   background-position: center;
   background-size: cover;
   vertical-align: top;
@@ -20,8 +21,8 @@
 
 .collection > div:first-child {
   display: inline-block;
-  width: 100vh;
-  height: 100vh;
+  width:  calc(100vh - 100px);
+  height: calc(100vh - 100px);
 }
 
 .collection section {

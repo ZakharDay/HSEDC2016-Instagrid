@@ -1,0 +1,8 @@
+.collection div {
+  height: calc(50vh - 50px);
+}
+
+.collection > div:first-child {
+  width:  calc(100vh - 100px);
+  height: calc(100vh - 100px);
+}

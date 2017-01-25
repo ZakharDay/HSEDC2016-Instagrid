@@ -55,6 +55,7 @@ table {
 }
 
 body, html {
+	min-width: 996px;
 	height: 100%;
   font-size: 0;
 }

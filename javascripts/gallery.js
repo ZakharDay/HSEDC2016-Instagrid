@@ -21,15 +21,51 @@ $(function() {
     $('.rail').css('transform', 'translateX(-' + calculateMoveWidth() + 'px)');
   };
 
-  $('.next').first().on('click', function() {
-    console.log('clicked', state);
-    state['currentCollection']++
+  function checkMoveAvailability() {
+    if (state.currentCollection + 1 >= state.collections) {
+      $('.next').first().addClass('disabled');
+    } else {
+      $('.next').first().removeClass('disabled');
+    }
+
+    if (state.currentCollection <= 0) {
+      $('.prev').first().addClass('disabled');
+    } else {
+      $('.prev').first().removeClass('disabled');
+    }
+  }
+
+  $('.prev').first().on('click', function(e) {
+    checkMoveAvailability();
     setCollectionWidth();
-    moveGallery();
+
+    if (state.currentCollection > 0) {
+      state['currentCollection']--
+    }
+
+    if ($('.prev').first().hasClass('disabled')) {
+      e.preventDefault();
+    } else {
+      moveGallery();
+    }
+  });
+
+  $('.next').first().on('click', function(e) {
+    checkMoveAvailability();
+    setCollectionWidth();
+
+    if (state.collections >= state.currentCollection + 1) {
+      state['currentCollection']++
+    }
+
+    if ($('.next').first().hasClass('disabled')) {
+      e.preventDefault();
+    } else {
+      moveGallery();
+    }
   });
 
   $(window).resize(function() {
-    console.log('resized', state);
     setCollectionWidth();
 
     setTimeout(function() {
